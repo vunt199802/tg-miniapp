@@ -232,16 +232,17 @@ const TelegramMiniForm = (props) => {
               {!showPassword ? <EyeOffIcon /> : <EyeIcon />}
             </button>
           </div>
-          <div className="text-right">
-            <a href="/#" className="text-[#D2276A] text-sm">
-              Forgot password?
-            </a>
-          </div>
 
           {/* Password Error Message */}
           {passwordError && (
             <p className="text-red-500 text-xs mt-1">{passwordError}</p>
           )}
+
+          <div className="text-right">
+            <a href="/#" className="text-[#D2276A] text-sm">
+              Forgot password?
+            </a>
+          </div>
         </div>
 
         <TelegramButton onClick={onButtonClick} className="mt-[8px]">

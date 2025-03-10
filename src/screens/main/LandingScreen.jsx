@@ -11,11 +11,9 @@ const Main = () => {
 
   return (
     <TelegramScreen showbackbutton={true}>
-      <img
-        className="w-[200px] h-[200px] p-[16px]"
-        src="./landing.svg"
-        alt="logo"
-      />
+      <div className="p-[16px]">
+        <img className="w-[200px] h-[200px] " src="./landing.svg" alt="logo" />
+      </div>
 
       <div className="flex flex-col relative h-full">
         <div className="flex flex-col ">
