@@ -1,7 +1,3 @@
-.telegramText {
-  color: var(--tg-theme-text-color);
-}
-
 .telegramTitle {
   font-weight: bolder;
   font-size: 22px;
