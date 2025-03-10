@@ -16,17 +16,17 @@ const Main = () => {
       <div className="flex flex-col relative h-full">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col items-center font-bold">
-            <TelegramText className="text-[24px]">The Most</TelegramText>
-            <TelegramText className="text-[24px]">
+            <TelegramText className="text-[28px]">The Most</TelegramText>
+            <TelegramText className="text-[28px]">
               Trusted & Secure
             </TelegramText>
-            <TelegramText className="text-[24px]">
+            <TelegramText className="text-[28px]">
               Crypto Community
             </TelegramText>
           </div>
 
           <div className="flex">
-            <TelegramText className="text-justify text-sm">
+            <TelegramText className="text-justify text-[18px]">
               Do you want a completely FREE way to earn real money? Money “that
               you can send to your family in our Blockm Wallet, get a Doctor at
               BlockMed, a lesson at BlockMed, pay for products at BigMudi, a

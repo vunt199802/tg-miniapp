@@ -815,6 +815,10 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-\[1px\] {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .border-\[4px\] {
     border-style: var(--tw-border-style);
     border-width: 4px;
@@ -954,8 +958,14 @@
   .text-\[14px\] {
     font-size: 14px;
   }
+  .text-\[18px\] {
+    font-size: 18px;
+  }
   .text-\[24px\] {
     font-size: 24px;
+  }
+  .text-\[28px\] {
+    font-size: 28px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
