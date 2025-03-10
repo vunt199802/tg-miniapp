@@ -6,7 +6,7 @@ const TelegramButton = ({ children, ...props }) => {
     <button
       {...props}
       className={
-        "telegramButton inline-flex w-full rounded-full justify-center bg-gradient-to-r py-2 from-[#DC2366] to-[#4F5CAA] " +
+        "telegramButton inline-flex w-full rounded-full justify-center bg-gradient-to-r py-[8px] from-[#DC2366] to-[#4F5CAA] " +
         props.className
       }
     >

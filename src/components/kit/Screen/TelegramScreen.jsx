@@ -16,7 +16,7 @@ const TelegramScreen = (props) => {
     <div
       {...props}
       className={
-        "telegramScreen p-4 relative flex flex-col items-center " +
+        "telegramScreen p-[16px] relative flex flex-col items-center " +
         props.className
       }
     />

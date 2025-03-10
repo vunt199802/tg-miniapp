@@ -16,10 +16,10 @@ const Auth = () => {
       <div className="flex flex-col relative h-full">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col items-center font-bold">
-            <TelegramText className="text-2xl">
+            <TelegramText className="text-[24px]">
               Earn & Share Crypto in
             </TelegramText>
-            <TelegramText className="text-2xl">one app</TelegramText>
+            <TelegramText className="text-[24px]">one app</TelegramText>
           </div>
 
           <div className="flex flex-col items-center">
@@ -32,13 +32,13 @@ const Auth = () => {
             <TelegramText className="text-sm">whenever.</TelegramText>
           </div>
         </div>
-        <div className="w-full absolute bottom-0 flex flex-col gap-2">
+        <div className="w-full absolute bottom-0 flex flex-col gap-[8px]">
           <TelegramButton onClick={() => navigate(PATH_REGISTER)}>
-            <ArrowRightIcon className="p-1 bg-white rounded-full text-black" />
+            <ArrowRightIcon className="p-[4px] bg-white rounded-full text-black" />
             CREATE ACCOUNT
           </TelegramButton>
           <TelegramButton
-            className="border-1 border-solid border-white bg-none"
+            className="border-[4px] border-solid border-white bg-none"
             onClick={() => navigate(PATH_LOGIN)}
           >
             LOG IN

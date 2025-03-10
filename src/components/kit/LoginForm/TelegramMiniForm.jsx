@@ -136,9 +136,9 @@ const TelegramMiniForm = (props) => {
 
   return (
     <div {...props} className={"telegramMiniForm w-full " + props.className}>
-      <form onSubmit={handleSubmit} className="w-full space-y-8">
+      <form onSubmit={handleSubmit} className="w-full space-y-[32px]">
         {/* Phone Number Input */}
-        <div className="space-y-2">
+        <div className="space-y-[8px]">
           <label
             htmlFor="phone"
             className="block text-white text-sm font-medium"
@@ -152,7 +152,7 @@ const TelegramMiniForm = (props) => {
                 ref={countryButtonRef}
                 type="button"
                 onClick={toggleCountryList}
-                className="flex items-center justify-between bg-transparent border-b border-gray-600 text-white px-2 py-2 w-16"
+                className="flex items-center justify-between bg-transparent border-b border-gray-600 text-white px-[8px] py-[8px] w-16"
               >
                 <span>{selectedCountry.code}</span>
                 {isCountryListOpen ? <ChevronUp /> : <ChevronDown />}
@@ -168,7 +168,7 @@ const TelegramMiniForm = (props) => {
                 placeholder="Enter your valid number"
                 className={`bg-transparent border-b ${
                   phoneError ? "border-red-500" : "border-gray-600"
-                } text-white px-2 py-2 w-full focus:outline-none focus:border-gray-400`}
+                } text-white px-[8px] py-[8px] w-full focus:outline-none focus:border-gray-400`}
               />
             </div>
 
@@ -176,7 +176,7 @@ const TelegramMiniForm = (props) => {
             {isCountryListOpen && (
               <div
                 ref={countryListRef}
-                className="absolute z-10 mt-1 w-64 bg-gray-900 border border-gray-700 rounded-md shadow-lg max-h-60 overflow-auto"
+                className="absolute z-10 mt-[4px] w-64 bg-gray-900 border border-gray-700 rounded-md shadow-lg max-h-60 overflow-auto"
               >
                 <ul className="py-1">
                   {countries.map((country) => (
@@ -184,7 +184,7 @@ const TelegramMiniForm = (props) => {
                       <button
                         type="button"
                         onClick={() => selectCountry(country)}
-                        className="flex justify-between items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-800"
+                        className="flex justify-between items-center w-full px-[16px] py-[8px] text-sm text-white hover:bg-gray-800"
                       >
                         <span>{country.name}</span>
                         <span className="text-gray-400">
@@ -205,7 +205,7 @@ const TelegramMiniForm = (props) => {
         </div>
 
         {/* Password Input */}
-        <div className="space-y-2">
+        <div className="space-y-[8px]">
           <label
             htmlFor="password"
             className="block text-white text-sm font-medium"
@@ -222,12 +222,12 @@ const TelegramMiniForm = (props) => {
               placeholder="Enter here"
               className={`bg-transparent border-b ${
                 passwordError ? "border-red-500" : "border-gray-600"
-              } text-white px-2 py-2 w-full focus:outline-none focus:border-gray-400`}
+              } text-white px-[8px] py-[8px] w-full focus:outline-none focus:border-gray-400`}
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-0 flex items-center pr-2"
+              className="absolute inset-y-0 right-0 flex items-center pr-[8px]"
             >
               {!showPassword ? <EyeOffIcon /> : <EyeIcon />}
             </button>
@@ -244,7 +244,7 @@ const TelegramMiniForm = (props) => {
           )}
         </div>
 
-        <TelegramButton onClick={onButtonClick} className="mt-2">
+        <TelegramButton onClick={onButtonClick} className="mt-[8px]">
           {props.buttonlabel}
         </TelegramButton>
       </form>

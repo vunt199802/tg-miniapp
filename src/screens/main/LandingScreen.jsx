@@ -16,9 +16,13 @@ const Main = () => {
       <div className="flex flex-col relative h-full">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col items-center font-bold">
-            <TelegramText className="text-2xl">The Most</TelegramText>
-            <TelegramText className="text-2xl">Trusted & Secure</TelegramText>
-            <TelegramText className="text-2xl">Crypto Community</TelegramText>
+            <TelegramText className="text-[24px]">The Most</TelegramText>
+            <TelegramText className="text-[24px]">
+              Trusted & Secure
+            </TelegramText>
+            <TelegramText className="text-[24px]">
+              Crypto Community
+            </TelegramText>
           </div>
 
           <div className="flex">
@@ -33,7 +37,7 @@ const Main = () => {
         </div>
         <div className="w-full absolute bottom-0">
           <TelegramButton onClick={() => navigate(PATH_AUTH)}>
-            <ArrowRightIcon className="p-1 bg-white rounded-full text-black" />
+            <ArrowRightIcon className="p-[4px] bg-white rounded-full text-black" />
             Swipe to get started
           </TelegramButton>
         </div>
