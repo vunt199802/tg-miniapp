@@ -12,24 +12,18 @@ const Main = () => {
   return (
     <TelegramScreen showbackbutton={true}>
       <div className="p-[16px]">
-        <img className="w-[200px] h-[200px] " src="./landing.svg" alt="logo" />
+        <img className="logo" src="./landing.svg" alt="logo" />
       </div>
 
-      <div className="flex flex-col relative h-full">
-        <div className="flex flex-col ">
-          <div className="flex flex-col items-center font-bold pt-[16px] pb-[32px]">
-            <TelegramText className="text-[28px] leading-[30px]">
-              The Most
-            </TelegramText>
-            <TelegramText className="text-[28px] leading-[30px]">
-              Trusted & Secure
-            </TelegramText>
-            <TelegramText className="text-[28px] leading-[30px]">
-              Crypto Community
-            </TelegramText>
+      <div className="container">
+        <div className="text-container ">
+          <div className="title-container">
+            <TelegramText className="title-text">The Most</TelegramText>
+            <TelegramText className="title-text">Trusted & Secure</TelegramText>
+            <TelegramText className="title-text">Crypto Community</TelegramText>
           </div>
 
-          <TelegramText className="text-justify text-[18px]">
+          <TelegramText className="text-justify subtitle-text">
             Do you want a completely FREE way to earn real money? Money “that
             you can send to your family in our Blockm Wallet, get a Doctor at
             BlockMed, a lesson at BlockMed, pay for products at BigMudi, a
@@ -37,9 +31,9 @@ const Main = () => {
             BlockLoans?
           </TelegramText>
         </div>
-        <div className="w-full absolute bottom-0">
+        <div className="button-container">
           <TelegramButton onClick={() => navigate(PATH_AUTH)}>
-            <ArrowRightIcon className="p-[4px] bg-white rounded-full text-black" />
+            <ArrowRightIcon className="icon" />
             Swipe to get started
           </TelegramButton>
         </div>
