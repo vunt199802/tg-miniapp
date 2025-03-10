@@ -11,29 +11,33 @@ const Main = () => {
 
   return (
     <TelegramScreen showbackbutton={true}>
-      <img className="w-44 h-44" src="./landing.svg" alt="logo" />
+      <img
+        className="w-[200px] h-[200px] p-[16px]"
+        src="./landing.svg"
+        alt="logo"
+      />
 
       <div className="flex flex-col relative h-full">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col items-center font-bold">
-            <TelegramText className="text-[28px]">The Most</TelegramText>
-            <TelegramText className="text-[28px]">
+        <div className="flex flex-col ">
+          <div className="flex flex-col items-center font-bold pt-[16px] pb-[32px]">
+            <TelegramText className="text-[28px] leading-[30px]">
+              The Most
+            </TelegramText>
+            <TelegramText className="text-[28px] leading-[30px]">
               Trusted & Secure
             </TelegramText>
-            <TelegramText className="text-[28px]">
+            <TelegramText className="text-[28px] leading-[30px]">
               Crypto Community
             </TelegramText>
           </div>
 
-          <div className="flex">
-            <TelegramText className="text-justify text-[18px]">
-              Do you want a completely FREE way to earn real money? Money “that
-              you can send to your family in our Blockm Wallet, get a Doctor at
-              BlockMed, a lesson at BlockMed, pay for products at BigMudi, a
-              delivery/ride at BlockRide, get a low-interest quick loan at
-              BlockLoans?
-            </TelegramText>
-          </div>
+          <TelegramText className="text-justify text-[18px]">
+            Do you want a completely FREE way to earn real money? Money “that
+            you can send to your family in our Blockm Wallet, get a Doctor at
+            BlockMed, a lesson at BlockMed, pay for products at BigMudi, a
+            delivery/ride at BlockRide, get a low-interest quick loan at
+            BlockLoans?
+          </TelegramText>
         </div>
         <div className="w-full absolute bottom-0">
           <TelegramButton onClick={() => navigate(PATH_AUTH)}>

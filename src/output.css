@@ -635,6 +635,12 @@
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
+  .h-\[180px\] {
+    height: 180px;
+  }
+  .h-\[200px\] {
+    height: 200px;
+  }
   .h-full {
     height: 100%;
   }
@@ -670,6 +676,12 @@
   }
   .w-64 {
     width: calc(var(--spacing) * 64);
+  }
+  .w-\[180px\] {
+    width: 180px;
+  }
+  .w-\[200px\] {
+    width: 200px;
   }
   .w-full {
     width: 100%;
@@ -903,6 +915,9 @@
   .p-\[16px\] {
     padding: 16px;
   }
+  .p-\[32px\] {
+    padding: 32px;
+  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -927,11 +942,17 @@
   .pt-2 {
     padding-top: calc(var(--spacing) * 2);
   }
+  .pt-\[16px\] {
+    padding-top: 16px;
+  }
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
   }
   .pr-\[8px\] {
     padding-right: 8px;
+  }
+  .pb-\[32px\] {
+    padding-bottom: 32px;
   }
   .text-justify {
     text-align: justify;
@@ -966,6 +987,10 @@
   }
   .text-\[28px\] {
     font-size: 28px;
+  }
+  .leading-\[30px\] {
+    --tw-leading: 30px;
+    line-height: 30px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -1155,6 +1180,10 @@ code {
   syntax: "<length-percentage>";
   inherits: false;
   initial-value: 100%;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-font-weight {
   syntax: "*";
