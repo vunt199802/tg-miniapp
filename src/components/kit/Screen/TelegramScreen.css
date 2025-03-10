@@ -1,10 +1,7 @@
 .telegramScreen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
   background: #171717;
-  color: var(--tg-theme-text-color);
+  color: #dcdcdc;
   height: 100vh;
-  padding: 32px;
+  overflow: auto;
 }

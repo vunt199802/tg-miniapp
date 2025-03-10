@@ -1,36 +1,45 @@
-import React, {useEffect} from 'react';
-import TelegramHeader from "../../components/kit/Header/TelegramHeader";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import TelegramText from "../../components/kit/Text/TelegramText";
-import {useTelegram} from "../../hooks/useTelegram";
-import {useNavigate} from "react-router-dom";
-import { PATH_SERVER} from "../../constants/Paths";
+import TelegramButton from "../../components/kit/Button/TelegramButton";
+import { PATH_AUTH } from "../../constants/Paths";
 import TelegramScreen from "../../components/kit/Screen/TelegramScreen";
-import TelegramDetailedButton from "../../components/kit/DetailedButton/TelegramDetailedButton";
+import { ArrowRightIcon } from "lucide-react";
 
 const Main = () => {
-    const {user} = useTelegram()
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <TelegramScreen showbackbutton={false}>
-            <TelegramHeader>
-                <TelegramText className={'telegramTitle'}>Main Screen</TelegramText>
-            </TelegramHeader>
+  return (
+    <TelegramScreen showbackbutton={true}>
+      <img className="w-44 h-44" src="./landing.svg" alt="logo" />
 
-            <TelegramText>Welcome {user?.username}!</TelegramText>
+      <div className="flex flex-col relative h-full">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center font-bold">
+            <TelegramText className="text-2xl">The Most</TelegramText>
+            <TelegramText className="text-2xl">Trusted & Secure</TelegramText>
+            <TelegramText className="text-2xl">Crypto Community</TelegramText>
+          </div>
 
-            <TelegramText className={'telegramSubtitle'}>Navigate to a screen:</TelegramText>
-
-            <TelegramDetailedButton
-                buttontitle={'Server Screen'}
-                buttondescription={
-                    'Interact with the bot server through REST API'
-                }
-                buttonlabel={'Navigate to Server Screen'}
-                onButtomClick={() => navigate(PATH_SERVER)}
-            />
-        </TelegramScreen>
-    );
+          <div className="flex">
+            <TelegramText className="text-justify text-sm">
+              Do you want a completely FREE way to earn real money? Money “that
+              you can send to your family in our Blockm Wallet, get a Doctor at
+              BlockMed, a lesson at BlockMed, pay for products at BigMudi, a
+              delivery/ride at BlockRide, get a low-interest quick loan at
+              BlockLoans?
+            </TelegramText>
+          </div>
+        </div>
+        <div className="w-full absolute bottom-0">
+          <TelegramButton onClick={() => navigate(PATH_AUTH)}>
+            <ArrowRightIcon className="p-1 bg-white rounded-full text-black" />
+            Swipe to get started
+          </TelegramButton>
+        </div>
+      </div>
+    </TelegramScreen>
+  );
 };
 
 export default Main;
