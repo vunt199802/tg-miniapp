@@ -1,0 +1,25 @@
+.telegramMiniForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.forgot-password-container {
+  text-align: right;
+}
+
+.forgot-password-link {
+  color: #d2276a;
+  font-size: 0.875rem;
+}
+
+.button-container {
+  margin-top: 8px;
+}

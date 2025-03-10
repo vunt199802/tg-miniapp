@@ -1,6 +1,7 @@
 .telegramButton {
   color: var(--tg-theme-button-text-color);
   outline: none;
+  border: none;
   cursor: pointer;
   text-align: center;
   text-decoration: none;

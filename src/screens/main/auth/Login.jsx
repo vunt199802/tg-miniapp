@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import TelegramLoginForm from "../../../components/kit/LoginForm/TelegramMiniForm";
+import TelegramLoginForm from "../../../components/kit/LoginForm/TelegramLoginForm";
 import TelegramText from "../../../components/kit/Text/TelegramText";
 import TelegramScreen from "../../../components/kit/Screen/TelegramScreen";
 
