@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 
 import TelegramButton from "../Button/TelegramButton";
+import TelegramPassword from "../Password/TelegramPassword";
 import "./TelegramMiniForm.css";
-import { EyeIcon, EyeOffIcon, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const countries = [
   { code: "US", name: "United States", phoneCode: "+1" },
@@ -20,10 +21,6 @@ const countries = [
 const TelegramMiniForm = (props) => {
   const [input, setInput] = useState("");
 
-  const onChangeInput = (e) => {
-    setInput(e.target.value);
-  };
-
   const onButtonClick = () => {
     props.onSubmit(input);
   };
@@ -31,7 +28,6 @@ const TelegramMiniForm = (props) => {
   const [isCountryListOpen, setIsCountryListOpen] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
 
   // Error states
   const [phoneError, setPhoneError] = useState("");
@@ -96,16 +92,6 @@ const TelegramMiniForm = (props) => {
     // Clear error when user starts typing
     if (phoneError && value) {
       setPhoneError("");
-    }
-  };
-
-  const handlePasswordChange = (e) => {
-    const value = e.target.value;
-    setPassword(value);
-
-    // Clear error when user starts typing
-    if (passwordError && value) {
-      setPasswordError("");
     }
   };
 
@@ -205,44 +191,12 @@ const TelegramMiniForm = (props) => {
         </div>
 
         {/* Password Input */}
-        <div className="space-y-[8px]">
-          <label
-            htmlFor="password"
-            className="block text-white text-sm font-medium"
-          >
-            Password
-          </label>
-          <div className="relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              id="password"
-              value={password}
-              onChange={handlePasswordChange}
-              onBlur={() => validatePassword(password)}
-              placeholder="Enter here"
-              className={`bg-transparent border-b ${
-                passwordError ? "border-red-500" : "border-gray-600"
-              } text-white px-[8px] py-[8px] w-full focus:outline-none focus:border-gray-400`}
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-0 flex items-center pr-[8px]"
-            >
-              {!showPassword ? <EyeOffIcon /> : <EyeIcon />}
-            </button>
-          </div>
+        <TelegramPassword />
 
-          {/* Password Error Message */}
-          {passwordError && (
-            <p className="text-red-500 text-xs mt-1">{passwordError}</p>
-          )}
-
-          <div className="text-right">
-            <a href="/#" className="text-[#D2276A] text-sm">
-              Forgot password?
-            </a>
-          </div>
+        <div className="text-right">
+          <a href="/#" className="text-[#D2276A] text-sm">
+            Forgot password?
+          </a>
         </div>
 
         <TelegramButton onClick={onButtonClick} className="mt-[8px]">

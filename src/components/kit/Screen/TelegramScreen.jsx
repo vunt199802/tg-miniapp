@@ -12,15 +12,7 @@ const TelegramScreen = (props) => {
     }
   }, [webApp]);
 
-  return (
-    <div
-      {...props}
-      className={
-        "telegramScreen p-[16px] relative flex flex-col items-center " +
-        props.className
-      }
-    />
-  );
+  return <div {...props} className={"telegramScreen " + props.className} />;
 };
 
 export default TelegramScreen;

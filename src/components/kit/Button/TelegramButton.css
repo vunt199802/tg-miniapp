@@ -6,4 +6,11 @@
   text-decoration: none;
   font-size: 16px;
   gap: 8px;
+  display: inline-flex;
+  width: 100%;
+  border-radius: 9999px;
+  justify-content: center;
+  background: linear-gradient(to right, #dc2366, #4f5caa);
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
