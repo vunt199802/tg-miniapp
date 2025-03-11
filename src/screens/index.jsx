@@ -13,6 +13,7 @@ import AuthScreen from "./main/auth/index";
 import LoginScreen from "./main/auth/Login";
 import RegisterScreen from "./main/auth/Register";
 import RegisterCongratulationScreen from "./main/auth/RegisterCongratulation";
+import EditProfileScreen from "./main/auth/EditProfile";
 
 import PhoneScreen from "./main/onboarding/Phone";
 import PhoneVerificationScreen from "./main/onboarding/PhoneVerification";
@@ -44,4 +45,5 @@ export {
   HouseholdScreen,
   LanguageScreen,
   RegisterCongratulationScreen,
+  EditProfileScreen,
 };

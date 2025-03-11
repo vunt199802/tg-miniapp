@@ -21,6 +21,7 @@ import {
   PATH_SETTING,
   PATH_GETSTARTED,
   PATH_LANGUAGE,
+  PATH_EDIT_PROFILE,
 } from "./constants/Paths";
 import {
   ServerScreen,
@@ -42,6 +43,7 @@ import {
   HouseholdScreen,
   LanguageScreen,
   RegisterCongratulationScreen,
+  EditProfileScreen,
 } from "./screens/index";
 
 function App() {
@@ -93,7 +95,7 @@ function App() {
           element={<RegisterCongratulationScreen />}
         />
         <Route path={PATH_SETTING} element={<SettingScreen />} />
-        {/* <Route path={PATH_EDIT_PROFILE} element={<EditProfileScreen />} /> */}
+        <Route path={PATH_EDIT_PROFILE} element={<EditProfileScreen />} />
         <Route path={PATH_LANGUAGE} element={<LanguageScreen />} />
       </Routes>
     </div>
