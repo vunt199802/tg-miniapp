@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import TelegramEditProfileForm from "../../../components/kit/EditProfileForm/TelegramEditProfileForm";
 import TelegramText from "../../../components/kit/Text/TelegramText";
 import TelegramScreen from "../../../components/kit/Screen/TelegramScreen";
+import HEADER from "../../../components/app/main/layout/MainHeader";
 
 const EditProfile = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const EditProfile = () => {
 
   return (
     <TelegramScreen showbackbutton={true} className="gap-[32px]">
-      <h1 className="form-title">Edit Profile</h1>
+      <HEADER title="Edit Profile" action={false} />
       <TelegramEditProfileForm
         fieldhint={`Enter a message`}
         buttonlabel={"NEXT"}

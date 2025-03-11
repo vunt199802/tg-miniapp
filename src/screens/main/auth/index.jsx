@@ -10,8 +10,10 @@ const Auth = () => {
   const navigate = useNavigate();
 
   return (
-    <TelegramScreen showbackbutton={true} className="gap-8">
-      <img className="logo" src="./logo-2.svg" alt="logo" />
+    <TelegramScreen showbackbutton={true}>
+      <div className="logo-container">
+        <img className="logo" src="./logo-2.svg" alt="logo" />
+      </div>
 
       <div className="container">
         <div className="text-container">

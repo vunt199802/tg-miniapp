@@ -11,7 +11,7 @@ const Main = () => {
 
   return (
     <TelegramScreen showbackbutton={true}>
-      <div className="p-[16px]">
+      <div className="logo-container">
         <img className="logo" src="./landing.svg" alt="logo" />
       </div>
 

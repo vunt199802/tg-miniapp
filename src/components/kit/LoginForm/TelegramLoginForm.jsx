@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import TelegramButton from "../Button/TelegramButton";
 import TelegramPassword from "../Password/TelegramPassword";
 import TelegramPhoneNumber from "../PhoneNumber/TelegramPhoneNumber";
 
 import "./TelegramLoginForm.css";
+import { PATH_SETTING } from "../../../constants/Paths";
 
 const countries = [
   { code: "US", name: "United States", phoneCode: "+1" },
@@ -20,10 +22,12 @@ const countries = [
 ];
 
 const TelegramLoginForm = (props) => {
+  const navigate = useNavigate();
   const [input, setInput] = useState("");
 
   const onButtonClick = () => {
     props.onSubmit(input);
+    navigate(PATH_SETTING);
   };
 
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
@@ -102,7 +106,7 @@ const TelegramLoginForm = (props) => {
   };
 
   return (
-    <div {...props} className={"telegramMiniForm " + props.className}>
+    <div {...props} className={"container " + props.className}>
       <form onSubmit={handleSubmit} className="form">
         {/* Phone Number Input */}
         <div>

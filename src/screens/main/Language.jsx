@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TelegramScreen from "../../components/kit/Screen/TelegramScreen";
-import TelegramText from "../../components/kit/Text/TelegramText";
 import TelegramButton from "../../components/kit/Button/TelegramButton";
+import HEADER from "../../components/app/main/layout/MainHeader";
 import { PATH_SETTING } from "../../constants/Paths";
 import "./onboarding/onboarding.css";
 
@@ -16,14 +15,10 @@ export default function Vehicle() {
   };
 
   return (
-    <TelegramScreen showbackbutton={true}>
+    <div className="app-container">
+      <HEADER title="Language" action={false} />
       <div className="container">
         <div>
-          <div className="title-container">
-            <TelegramText className="title-text">
-              Do you have a vehicle?
-            </TelegramText>
-          </div>
           <div className="body-container">
             <div
               className="gender-option"
@@ -150,6 +145,6 @@ export default function Vehicle() {
           </TelegramButton>
         </div>
       </div>
-    </TelegramScreen>
+    </div>
   );
 }

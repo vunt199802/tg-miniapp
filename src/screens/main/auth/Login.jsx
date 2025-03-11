@@ -1,19 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import TelegramLoginForm from "../../../components/kit/LoginForm/TelegramLoginForm";
-import TelegramText from "../../../components/kit/Text/TelegramText";
 import TelegramScreen from "../../../components/kit/Screen/TelegramScreen";
+import HEADER from "../../../components/app/main/layout/OnboardingHeader";
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const onSendMessage = async (message) => {
     console.log("message", message);
   };
 
   return (
     <TelegramScreen showbackbutton={true}>
-      <h1 className="form-title">LOG IN</h1>
+      <HEADER title="LOG IN" />
       <TelegramLoginForm
         fieldhint={`Enter a message`}
         buttonlabel={"LOG IN"}

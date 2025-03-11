@@ -73,7 +73,7 @@ const TelegramRegisterForm = () => {
   };
 
   return (
-    <div className="create-account-container">
+    <div className="container">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label htmlFor="firstName" className="input-label">

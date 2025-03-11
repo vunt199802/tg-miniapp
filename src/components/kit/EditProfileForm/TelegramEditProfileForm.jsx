@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import TelegramButton from "../Button/TelegramButton";
 import TelegramPassword from "../Password/TelegramPassword";
 import TelegramPhoneNumber from "../PhoneNumber/TelegramPhoneNumber";
-import { Eye, EyeOff, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 import "./TelegramEditProfileForm.css";
 
