@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { Eye, EyeOff, ChevronDown } from "lucide-react";
 import { PATH_LOGIN, PATH_PHONE } from "../../../constants/Paths";
+import { useTelegram } from "../../../hooks/useTelegram";
 
 import TelegramButton from "../Button/TelegramButton";
 
@@ -22,6 +23,8 @@ const countries = [
 ];
 
 const TelegramRegisterForm = () => {
+  const { user } = useTelegram();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -69,8 +72,6 @@ const TelegramRegisterForm = () => {
 
   return (
     <div className="create-account-container">
-      <h1 className="form-title">Create your account</h1>
-
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label htmlFor="firstName" className="input-label">
@@ -204,7 +205,13 @@ const TelegramRegisterForm = () => {
           </label>
         </div>
 
-        <TelegramButton type="submit">NEXT</TelegramButton>
+        <TelegramButton
+          onClick={() => {
+            console.log(user);
+          }}
+        >
+          NEXT
+        </TelegramButton>
       </form>
 
       <div className="login-link-container">

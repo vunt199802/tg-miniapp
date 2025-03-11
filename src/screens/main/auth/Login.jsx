@@ -13,6 +13,7 @@ const Login = () => {
 
   return (
     <TelegramScreen showbackbutton={true}>
+      <h1 className="form-title">LOG IN</h1>
       <TelegramLoginForm
         fieldhint={`Enter a message`}
         buttonlabel={"LOG IN"}

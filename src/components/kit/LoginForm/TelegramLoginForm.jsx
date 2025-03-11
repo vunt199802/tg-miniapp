@@ -103,8 +103,6 @@ const TelegramLoginForm = (props) => {
 
   return (
     <div {...props} className={"telegramMiniForm " + props.className}>
-      <h1 className="form-title">LOG IN</h1>
-
       <form onSubmit={handleSubmit} className="form">
         {/* Phone Number Input */}
         <TelegramPhoneNumber

@@ -13,6 +13,7 @@ const Login = () => {
 
   return (
     <TelegramScreen showbackbutton={true} className="gap-[32px]">
+      <h1 className="form-title">Create your account</h1>
       <TelegramRegisterForm
         fieldhint={`Enter a message`}
         buttonlabel={"NEXT"}
