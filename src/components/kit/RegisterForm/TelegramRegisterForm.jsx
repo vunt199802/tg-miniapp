@@ -2,8 +2,9 @@
 
 import { useState, useRef } from "react";
 import { Eye, EyeOff, ChevronDown } from "lucide-react";
-import { PATH_LOGIN, PATH_PHONE } from "../../../constants/Paths";
+import { PATH_LOGIN, PATH_GETSTARTED } from "../../../constants/Paths";
 import { useTelegram } from "../../../hooks/useTelegram";
+import { useNavigate } from "react-router-dom";
 
 import TelegramButton from "../Button/TelegramButton";
 
@@ -24,6 +25,7 @@ const countries = [
 
 const TelegramRegisterForm = () => {
   const { user } = useTelegram();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -205,11 +207,7 @@ const TelegramRegisterForm = () => {
           </label>
         </div>
 
-        <TelegramButton
-          onClick={() => {
-            console.log(user);
-          }}
-        >
+        <TelegramButton onClick={() => navigate(PATH_GETSTARTED)}>
           NEXT
         </TelegramButton>
       </form>

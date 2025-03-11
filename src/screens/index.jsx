@@ -16,6 +16,8 @@ import RegisterCongratulationScreen from "./main/auth/RegisterCongratulation";
 
 import PhoneScreen from "./main/onboarding/Phone";
 import PhoneVerificationScreen from "./main/onboarding/PhoneVerification";
+
+import GetStartedScreen from "./main/onboarding/GetStarted";
 import BirthdayScreen from "./main/onboarding/Birthday";
 import GenderScreen from "./main/onboarding/Gender";
 import RelationShipScreen from "./main/onboarding/RelationShip";
@@ -33,6 +35,7 @@ export {
   RegisterScreen,
   PhoneScreen,
   PhoneVerificationScreen,
+  GetStartedScreen,
   BirthdayScreen,
   GenderScreen,
   RelationShipScreen,

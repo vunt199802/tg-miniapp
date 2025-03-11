@@ -19,7 +19,7 @@ import {
   PATH_VEHICLE,
   PATH_REGISTER_CONGRATULATION,
   PATH_SETTING,
-  PATH_EDIT_PROFILE,
+  PATH_GETSTARTED,
   PATH_LANGUAGE,
 } from "./constants/Paths";
 import {
@@ -33,6 +33,7 @@ import {
   RegisterScreen,
   PhoneScreen,
   PhoneVerificationScreen,
+  GetStartedScreen,
   BirthdayScreen,
   GenderScreen,
   RelationShipScreen,
@@ -81,6 +82,7 @@ function App() {
           element={<PhoneVerificationScreen />}
         />
         <Route path={PATH_HOME} element={<HomeScreen />} />
+        <Route path={PATH_GETSTARTED} element={<GetStartedScreen />} />
         <Route path={PATH_GENDER} element={<GenderScreen />} />
         <Route path={PATH_BIRTHDAY} element={<BirthdayScreen />} />
         <Route path={PATH_RELATIONSHIP} element={<RelationShipScreen />} />

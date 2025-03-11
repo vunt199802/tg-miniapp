@@ -105,18 +105,20 @@ const TelegramLoginForm = (props) => {
     <div {...props} className={"telegramMiniForm " + props.className}>
       <form onSubmit={handleSubmit} className="form">
         {/* Phone Number Input */}
-        <TelegramPhoneNumber
-          phoneError={phoneError}
-          isCountryListOpen={isCountryListOpen}
-        />
+        <div>
+          <TelegramPhoneNumber
+            phoneError={phoneError}
+            isCountryListOpen={isCountryListOpen}
+          />
 
-        {/* Password Input */}
-        <TelegramPassword passwordError={passwordError} />
+          {/* Password Input */}
+          <TelegramPassword passwordError={passwordError} />
 
-        <div className="forgot-password-container">
-          <a href="/#" className="forgot-password-link">
-            Forgot password?
-          </a>
+          <div className="forgot-password-container">
+            <a href="/#" className="forgot-password-link">
+              Forgot password?
+            </a>
+          </div>
         </div>
 
         <TelegramButton onClick={onButtonClick}>
