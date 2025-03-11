@@ -33,16 +33,16 @@
 
 .phone-input {
   background-color: transparent;
+  border: none;
   border-bottom: 1px solid #4b5563;
   color: white;
   padding: 8px;
   width: 100%;
-  border: none;
 }
 
 .phone-input:focus {
   outline: none;
-  border-color: #9ca3af;
+  border-bottom-color: #e91e63;
 }
 
 .phone-input-error {
