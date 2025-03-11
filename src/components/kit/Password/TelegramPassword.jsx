@@ -34,11 +34,6 @@ const TelegramPassword = (props) => {
     }
   };
 
-  const handleBlur = () => {
-    const error = validatePassword(password);
-    setPasswordError(error);
-  };
-
   return (
     <div className="password-container">
       <label htmlFor="password" className="input-label">
@@ -50,7 +45,7 @@ const TelegramPassword = (props) => {
           id="password"
           value={password}
           onChange={handlePasswordChange}
-          onBlur={handleBlur}
+          onBlur={() => validatePassword(password)}
           placeholder="Enter here"
           className={`password-input ${
             passwordError ? "password-input-error" : ""
@@ -65,9 +60,7 @@ const TelegramPassword = (props) => {
         </button>
       </div>
 
-      {passwordError && (
-        <p className="password-error-message">{passwordError}</p>
-      )}
+      {passwordError && <p className="error-message">{passwordError}</p>}
     </div>
   );
 };
