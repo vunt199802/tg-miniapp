@@ -12,12 +12,7 @@ const Login = () => {
   };
 
   return (
-    <TelegramScreen showbackbutton={true} className="gap-[32px]">
-      <div className="flex flex-col gap-[16px]">
-        <div className="flex flex-col items-center font-bold">
-          <TelegramText className="text-[24px]">Log in</TelegramText>
-        </div>
-      </div>
+    <TelegramScreen showbackbutton={true}>
       <TelegramLoginForm
         fieldhint={`Enter a message`}
         buttonlabel={"LOG IN"}

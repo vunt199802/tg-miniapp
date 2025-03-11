@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 
-import "./TelegramPhoneNumber.css";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import "./TelegramPhoneNumber.css";
 
 const countries = [
   { code: "US", name: "United States", phoneCode: "+1" },
@@ -93,7 +93,7 @@ const TelegramLoginForm = (props) => {
             ref={countryButtonRef}
             type="button"
             onClick={toggleCountryList}
-            className="country-selector"
+            className="phone-number-country-selector"
           >
             <span>{selectedCountry.code}</span>
             {isCountryListOpen ? <ChevronUp /> : <ChevronDown />}

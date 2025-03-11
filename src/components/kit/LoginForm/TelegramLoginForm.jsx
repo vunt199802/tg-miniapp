@@ -121,11 +121,9 @@ const TelegramLoginForm = (props) => {
           </a>
         </div>
 
-        <div className="button-container">
-          <TelegramButton onClick={onButtonClick}>
-            {props.buttonlabel}
-          </TelegramButton>
-        </div>
+        <TelegramButton onClick={onButtonClick}>
+          {props.buttonlabel}
+        </TelegramButton>
       </form>
     </div>
   );
