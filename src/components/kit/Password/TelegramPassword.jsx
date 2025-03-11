@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { EyeIcon, EyeOffIcon } from "lucide-react";
+import "./TelegramPassword.css";
 
 const TelegramPassword = (props) => {
   const [password, setPassword] = useState("");
@@ -33,38 +34,39 @@ const TelegramPassword = (props) => {
     }
   };
 
+  const handleBlur = () => {
+    const error = validatePassword(password);
+    setPasswordError(error);
+  };
+
   return (
-    <div className="space-y-[8px]">
-      <label
-        htmlFor="password"
-        className="block text-white text-sm font-medium"
-      >
+    <div className="password-container">
+      <label htmlFor="password" className="input-label">
         Password
       </label>
-      <div className="relative">
+      <div className="password-input-container">
         <input
           type={showPassword ? "text" : "password"}
           id="password"
           value={password}
           onChange={handlePasswordChange}
-          onBlur={() => validatePassword(password)}
+          onBlur={handleBlur}
           placeholder="Enter here"
-          className={`bg-transparent border-b ${
-            passwordError ? "border-red-500" : "border-gray-600"
-          } text-white px-[8px] py-[8px] w-full focus:outline-none focus:border-gray-400`}
+          className={`password-input ${
+            passwordError ? "password-input-error" : ""
+          }`}
         />
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute inset-y-0 right-0 flex items-center pr-[8px]"
+          className="password-toggle-button"
         >
-          {!showPassword ? <EyeOffIcon /> : <EyeIcon />}
+          {showPassword ? <EyeIcon /> : <EyeOffIcon />}
         </button>
       </div>
 
-      {/* Password Error Message */}
       {passwordError && (
-        <p className="text-red-500 text-xs mt-1">{passwordError}</p>
+        <p className="password-error-message">{passwordError}</p>
       )}
     </div>
   );
