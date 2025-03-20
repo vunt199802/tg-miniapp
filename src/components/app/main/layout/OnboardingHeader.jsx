@@ -21,13 +21,15 @@ const Button = ({
   );
 };
 
-function Header({ title }) {
+function Header({ title, showbackbutton = true, onboardingStatus }) {
   const navigate = useNavigate();
   return (
     <header className="header">
-      <Button variant="ghost" size="icon" className="back-button">
-        <ArrowLeft onClick={() => navigate(-1)} />
-      </Button>
+      {showbackbutton && (
+        <Button variant="ghost" size="icon" className="back-button">
+          <ArrowLeft onClick={() => navigate(-1)} />
+        </Button>
+      )}
       <h1 className="header-title">{title}</h1>
     </header>
   );

@@ -25,6 +25,7 @@ const countries = [
 
 const TelegramRegisterForm = () => {
   const { user } = useTelegram();
+  console.log("======= user", user);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -77,6 +78,36 @@ const TelegramRegisterForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label htmlFor="firstName" className="input-label">
+            Telegram Id
+          </label>
+          <div className="input-field-container">
+            <input
+              type="text"
+              id="id"
+              name="id"
+              value={user?.id}
+              placeholder="Enter name"
+              className="text-input"
+            />
+          </div>
+        </div>
+        <div className="input-container">
+          <label htmlFor="firstName" className="input-label">
+            Username
+          </label>
+          <div className="input-field-container">
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={user?.username}
+              placeholder="Enter name"
+              className="text-input"
+            />
+          </div>
+        </div>
+        <div className="input-container">
+          <label htmlFor="firstName" className="input-label">
             First Name
           </label>
           <div className="input-field-container">
@@ -84,8 +115,7 @@ const TelegramRegisterForm = () => {
               type="text"
               id="firstName"
               name="firstName"
-              value={formData.firstName}
-              onChange={handleInputChange}
+              value={user?.firstName}
               placeholder="Enter name"
               className="text-input"
             />
@@ -101,8 +131,7 @@ const TelegramRegisterForm = () => {
               type="text"
               id="lastName"
               name="lastName"
-              value={formData.lastName}
-              onChange={handleInputChange}
+              value={user?.lastName}
               placeholder="Enter name"
               className="text-input"
             />
@@ -159,32 +188,6 @@ const TelegramRegisterForm = () => {
                   </ul>
                 </div>
               )}
-            </div>
-          </div>
-        </div>
-
-        <div className="input-container">
-          <label htmlFor="password" className="input-label">
-            Password
-          </label>
-          <div className="input-field-container">
-            <div className="password-input-container">
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                placeholder="Enter here"
-                className="text-input password-input"
-              />
-              <button
-                type="button"
-                onClick={togglePasswordVisibility}
-                className="password-toggle-button"
-              >
-                {showPassword ? <EyeOff /> : <Eye />}
-              </button>
             </div>
           </div>
         </div>
