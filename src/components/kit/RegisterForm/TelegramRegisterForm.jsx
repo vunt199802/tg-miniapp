@@ -81,29 +81,6 @@ const TelegramRegisterForm = () => {
       appsChannelKey: "aa",
       deviceId: "aa",
     };
-
-    const botToken = "7289938027:AAGl3xSo0KhEkuJ2TuBXeTgi85ZPG3tXhQ4";
-
-    const generateHash = async () => {
-      // Create a SHA-256 hash of the bot token
-      const secret = CryptoJS.SHA256(botToken).toString();
-
-      // Create the data check string
-      const dataCheckString = Object.keys(payload)
-        .filter((key) => key !== "hash")
-        .sort()
-        .map((key) => `${key}=${payload[key]}`)
-        .join("\n");
-
-      const computedHash = CryptoJS.HmacSHA256(
-        dataCheckString,
-        secret
-      ).toString();
-
-      console.log("hash", computedHash);
-    };
-
-    generateHash();
   }, []);
 
   const handleSubmit = (e) => {
