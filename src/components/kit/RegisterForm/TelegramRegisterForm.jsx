@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Eye, EyeOff, ChevronDown } from "lucide-react";
 import { PATH_LOGIN, PATH_GETSTARTED } from "../../../constants/Paths";
 import { useTelegram } from "../../../hooks/useTelegram";
@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import TelegramButton from "../Button/TelegramButton";
 
 import "./TelegramRegisterForm.css";
+import CryptoJS from "crypto-js";
 
 const countries = [
   { code: "US", name: "United States" },
@@ -24,48 +25,86 @@ const countries = [
 ];
 
 const TelegramRegisterForm = () => {
-  const { user } = useTelegram();
-  console.log("======= user", user);
+  const { user, initData } = useTelegram();
+  console.log("======= user", user, initData);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    country: "",
-    password: "",
+    hash: "",
+    id: user?.id,
+    username: user?.username,
+    firstName: user?.first_name,
+    lastName: user?.last_name,
+    roleId: "5ebcff5991b7084528ebeb19",
+    appsChannelKey: "aa",
+    deviceId: "aa",
   });
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [isCountryListOpen, setIsCountryListOpen] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
+  // const [isCountryListOpen, setIsCountryListOpen] = useState(false);
   const [termsAgreed, setTermsAgreed] = useState(false);
 
-  const countryListRef = useRef(null);
-  const countryButtonRef = useRef(null);
+  // const countryListRef = useRef(null);
+  // const countryButtonRef = useRef(null);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
+  //   });
+  // };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  // const togglePasswordVisibility = () => {
+  //   setShowPassword(!showPassword);
+  // };
 
-  const toggleCountryList = () => {
-    setIsCountryListOpen(!isCountryListOpen);
-  };
+  // const toggleCountryList = () => {
+  //   setIsCountryListOpen(!isCountryListOpen);
+  // };
 
-  const selectCountry = (country) => {
-    setFormData({
-      ...formData,
-      country: country.name,
-    });
-    setIsCountryListOpen(false);
-  };
+  // const selectCountry = (country) => {
+  //   setFormData({
+  //     ...formData,
+  //     country: country.name,
+  //   });
+  //   setIsCountryListOpen(false);
+  // };
+
+  useEffect(() => {
+    const payload = {
+      id: "6260876829",
+      username: "rexcare_77",
+      first_name: "rexcare",
+      last_name: "era",
+      roleId: "5ebcff5991b7084528ebeb19",
+      appsChannelKey: "aa",
+      deviceId: "aa",
+    };
+
+    const botToken = "7289938027:AAGl3xSo0KhEkuJ2TuBXeTgi85ZPG3tXhQ4";
+
+    const generateHash = async () => {
+      // Create a SHA-256 hash of the bot token
+      const secret = CryptoJS.SHA256(botToken).toString();
+
+      // Create the data check string
+      const dataCheckString = Object.keys(payload)
+        .filter((key) => key !== "hash")
+        .sort()
+        .map((key) => `${key}=${payload[key]}`)
+        .join("\n");
+
+      const computedHash = CryptoJS.HmacSHA256(
+        dataCheckString,
+        secret
+      ).toString();
+
+      console.log("hash", computedHash);
+    };
+
+    generateHash();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -115,7 +154,7 @@ const TelegramRegisterForm = () => {
               type="text"
               id="firstName"
               name="firstName"
-              value={user?.firstName}
+              value={user?.first_name}
               placeholder="Enter name"
               className="text-input"
             />
@@ -131,10 +170,36 @@ const TelegramRegisterForm = () => {
               type="text"
               id="lastName"
               name="lastName"
-              value={user?.lastName}
+              value={user?.last_name}
               placeholder="Enter name"
               className="text-input"
             />
+          </div>
+        </div>
+
+        {/* <div className="input-container">
+          <label htmlFor="password" className="input-label">
+            Password
+          </label>
+          <div className="input-field-container">
+            <div className="password-input-container">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+                placeholder="Enter here"
+                className="text-input password-input"
+              />
+              <button
+                type="button"
+                onClick={togglePasswordVisibility}
+                className="password-toggle-button"
+              >
+                {showPassword ? <EyeOff /> : <Eye />}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -190,7 +255,7 @@ const TelegramRegisterForm = () => {
               )}
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="terms-container">
           <label className="checkbox-container">
