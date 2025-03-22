@@ -2,7 +2,7 @@
 export function useTelegram() {
   const webApp = window.Telegram.WebApp;
   const user = webApp.initDataUnsafe?.user;
-  const initData = WebApp.initData;
+  const initData = webApp.initData;
 
   // Use as a callback for method results
   const onArgumentResult = (functionName, argument, result) => {
